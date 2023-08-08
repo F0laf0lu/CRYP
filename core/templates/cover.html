@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>Cover Page</title>{% endblock title %}
+{% block customstyle %}
+  <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+{% endblock customstyle %}
+
+
+{% block active %}
+                <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
+                <a class="nav-link fw-bold py-1 px-0" href="{% url 'login' %}">Login</a>
+                <a class="nav-link fw-bold py-1 px-0" href="{% url 'signup' %}">Signup</a>
+{% endblock active %}
+
+{% block main %}
+        <main class="px-2 mt-5">
+            <h1> Crop Yield Predictor – Grow crops with Confidence!</h1>
+            <p class="lead">Harness the power of data-driven predictions for optimal crop yields. Empower your farming decisions with accurate and actionable insights.Maximize your harvest and cultivate a thriving agricultural future.</p>
+            <p class="lead">
+            <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
+            </p>
+        </main>
+{% endblock main %}
+
+{% block footer %}
+<footer class="mt-auto text-white-50">
+            
+        </footer>
+{% endblock footer %}
+
+
+

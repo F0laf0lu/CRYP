@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} <title>Login</title>  {% endblock title %} 
+
+{% block customstyle %}
+  <link href="{% static 'css/sign-in.css' %}" rel="stylesheet">
+{% endblock customstyle %}
+
+{% block active %}
+<a class="nav-link fw-bold py-1 px-0" href="{% url 'cover' %}">Home</a>
+<a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="{% url 'login' %}">Login</a>
+<a class="nav-link fw-bold py-1 px-0" href="{% url 'signup' %}">Signup</a>
+{% endblock active %}
+
+{% block main %}
+    <main class="form-signin w-100 bg-dark m-auto">
+    <form method='POST'>
+        {% csrf_token %}
+        <h1 class="h3 mb-3 fw-normal text-light mx-5 px-5">Log in</h1>
+        <div class="form-floating">
+            {{form.as_p}}
+        </div>
+        <button class="btn btn-danger w-100 py-2" type="submit">Log in</button>
+        <p class="mt-5 mx-5 px-5 mb-3 text-light">&copy; 2023</p>
+      </form>
+    </main>
+{% endblock main %}
+
+
+

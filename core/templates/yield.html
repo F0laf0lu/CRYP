@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %} <title>YIeld</title>  {% endblock title %}
+
+
+{% block active %}
+<li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light active" aria-current="page" href="{% url 'yield' %}">Yield Prediction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light">Weather Forecast</a>
+              </li>
+{% endblock active %}
+
+{% block main %}
+    <main class="form-signin w-75 bg-dark text-light m-auto">
+    <form action="{% url 'predict' %}" method="post">
+    {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal text-light mx-5 p-3">Enter Required Parameters</h1>
+    
+    
+    <div class="w-75 mx-5 pt-2">
+        {{area.country}}
+    </div>
+    
+    <br>
+    <div class="w-75 mx-5 pt-2">
+        {{crop.Crop}}
+    </div>
+    <br>
+    <div class="w-75 mx-5 mb-2 pt-2 text-dark form-floating">
+        {{input.Temperature}} 
+        {{input.Temperature.label_tag}} 
+    </div>
+
+    <div class="w-75 mx-5 pt-2 mb-2 text-dark form-floating">
+        {{input.Precipitation}}
+        {{input.Precipitation.label_tag}}
+    </div>
+
+    <div class="w-75 mx-5 pt-2 mb-2 text-dark form-floating">
+        {{input.Pesticides}} 
+        {{input.Pesticides.label_tag}}
+    </div>
+
+    <div class='w-75 mx-5 pt-3 pb-4'>
+    <button class="btn btn-danger py-2" type="submit">Submit</button>
+    </div>
+    </form>
+    </main>
+
+{% endblock main %}

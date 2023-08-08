@@ -1,0 +1,26 @@
+
+#navbar{
+  background-color: rgb(3, 57, 3);
+  height: 80px;
+}
+
+.nav-item .nav-link{
+  font-size: 25px;
+}
+
+#bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+}
+
+.box h2{
+  margin-left:100px;
+  font-size: 50px;
+  padding: 50px;
+}
+#button{
+  margin-left: 150px;
+  font-size: 28px;
+}

@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block main %}
+    <main class="form-signin h-50 bg-dark text-light m-auto">
+        <div class="col">
+            <div class="card bg-dark text-light">
+                <div class="card-header">
+                    <h3>Result</h3>
+                </div>
+                <div class="card-body mb-3">
+                    <h4 class="card-title">The expected yield for {{crop}} is {{prediction}} g/ha </h4>
+                </div>
+            </div>
+            <a href="{% url 'home' %}" class="btn w-25 btn-primary">Go Back</a>
+        </div>
+    </main>
+</body>
+{% endblock main %}

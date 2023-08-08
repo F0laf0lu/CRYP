@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %} <title>Home</title>  {% endblock title %}
+
+
+
+{% block active %}
+<li class="nav-item">
+                <a class="nav-link text-light active" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'yield' %}">Yield Prediction</a>
+              </li>
+{% endblock active %}
+
+    {% block main %}
+    <main class="form-signin w-50 h-50 bg-dark text-light m-auto">
+        <div class='box'>
+        <h2>Welcome to CRYP</h2>
+        <a class="nav-link text-light" href="{% url 'yield' %}"><button id='button' class="btn btn-success" type="submit">Click here to make a prediction</button></a>
+        </div>
+    </main>
+    {% endblock main %}
